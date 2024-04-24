@@ -41,7 +41,6 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 5. Begin by defining the Verilog module for the JK flip-flop
 6. Specify the inputs and outputs in the module declaration
 7. Declare any internal signals if needed
-8. 
 
 **PROGRAM**
 
