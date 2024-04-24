@@ -2,7 +2,7 @@
 
 **AIM:** 
 
-To implement  JK flipflop using verilog and validating their functionality using their functional tables
+To implement JK flipflop using verilog and validating their functionality using their functional tables
 
 **SOFTWARE REQUIRED:**
 
@@ -34,15 +34,62 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Define Inputs and Outputs
+2. Identify the inputs required for the JK flip-flop
+3. Identify the outputs of the JK flip-flop
+4. Verilog Module Structure
+5. Begin by defining the Verilog module for the JK flip-flop
+6. Specify the inputs and outputs in the module declaration
+7. Declare any internal signals if needed
+8. 
 
 **PROGRAM**
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+``` C
+/*  Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by: Vikamuhan Reddy.N
+RegisterNumber: 212223240181
 */
 
+module JKFLIPFLOP(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+always @ (posedge (clock))
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end 
+else
+   begin
+	   if(j==0 && k==0)
+		   begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+		   begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1 && k==1)
+		    begin
+			 q<=~q;
+			 qb<=~qb;
+			 end
+	end
+end	
+endmodule
+```
+
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/vikamuhan-reddy/JKFLIPFLOP-USING-IF-ELSE/assets/144928933/ef48b74a-5e34-40f4-a38e-efea69f0c564)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/vikamuhan-reddy/JKFLIPFLOP-USING-IF-ELSE/assets/144928933/f94d1a8a-b7cc-4f7f-8baa-e3c3a0e1d932)
+
 
 **RESULTS**
+
+Thus,the code executed successfully.
+
